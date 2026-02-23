@@ -1,107 +1,735 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Earth Like Music</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Like Music</title>
+    <meta name="description" content="Earth Like Music é um selo boutique de produção premium e direção artística, operando música como ativo de longo prazo com estrutura real.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Earth Like Music">
+    <meta property="og:description" content="Earth Like Music é um selo boutique de produção premium e direção artística, operando música como ativo de longo prazo com estrutura real.">
+    <meta property="og:image" content="https://earthlikemusic.com/wp-content/uploads/2026/02/ChatGPT-Image-19-de-fev.-de-2026-00_05_12.png">
+    <meta property="og:url" content="https://earthlikemusic.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset e estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-  <link rel="stylesheet" href="css/styles.css">
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Seções */
+        section {
+            position: relative;
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        /* Shapes dividers */
+        .shape-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .shape-top svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 100px;
+        }
+
+        .shape-top .shape-fill {
+            fill: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #16213e 100%);
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-image {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-image img:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(52, 234, 216, 0.3);
+        }
+
+        .hero-text {
+            color: #ffffff;
+        }
+
+        .hero-text h6 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            color: #34ead8;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-text h6:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .hero-text h6:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin: 30px 0 20px;
+            background: linear-gradient(45deg, #ffffff, #34ead8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin: 30px 0;
+            animation: fadeInUp 0.8s ease 0.8s forwards;
+            opacity: 0;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            border: 2px solid #34ead8;
+            color: #34ead8;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: #34ead8;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: #0a0a0a;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: #34ead8;
+            color: #0a0a0a;
+            border: 2px solid #34ead8;
+        }
+
+        .btn-primary::before {
+            background: #ffffff;
+        }
+
+        .btn-primary:hover {
+            border-color: #ffffff;
+        }
+
+        /* Títulos das seções */
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #ffffff, #34ead8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #cccccc;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        /* Cards de serviços */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #34ead8;
+            box-shadow: 0 20px 40px rgba(52, 234, 216, 0.2);
+        }
+
+        .service-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: #34ead8;
+            margin-bottom: 20px;
+        }
+
+        .service-card .divider {
+            width: 50px;
+            height: 2px;
+            background: #34ead8;
+            margin: 20px auto;
+            transition: width 0.3s ease;
+        }
+
+        .service-card:hover .divider {
+            width: 100px;
+        }
+
+        .service-card p {
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+
+        /* Grid de vídeos */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .video-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(52, 234, 216, 0.2);
+        }
+
+        .video-card iframe {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .video-card:hover iframe {
+            border-color: #34ead8;
+        }
+
+        .section-label {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: #34ead8;
+            text-align: center;
+            margin: 60px 0 30px;
+        }
+
+        /* Seção de modelos de negócio */
+        .business-models {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            position: relative;
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .model-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .model-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #34ead8;
+            box-shadow: 0 20px 40px rgba(52, 234, 216, 0.3);
+        }
+
+        .model-card h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: #34ead8;
+            margin-bottom: 20px;
+        }
+
+        .model-card ul {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .model-card li {
+            color: #cccccc;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .model-card li:hover {
+            transform: translateX(10px);
+            color: #34ead8;
+        }
+
+        .model-card li::before {
+            content: '•';
+            color: #34ead8;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0a0a0a;
+            padding: 60px 0 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-logo {
+            max-width: 200px;
+            margin: 0 auto 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .footer-logo img {
+            width: 100%;
+        }
+
+        .footer-text {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Animações */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Elementos individuais */
+        .highlight-text {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #34ead8;
+            margin: 30px 0;
+            line-height: 1.8;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-text:hover {
+            transform: scale(1.02);
+            text-shadow: 0 0 20px rgba(52, 234, 216, 0.5);
+        }
+
+        .image-full {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            margin: 0 auto;
+            display: block;
+            transition: all 0.5s ease;
+        }
+
+        .image-full:hover {
+            transform: rotate(2deg) scale(1.05);
+            box-shadow: 0 20px 40px rgba(52, 234, 216, 0.4);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Efeitos de hover extras */
+        .hover-glow {
+            transition: all 0.3s ease;
+        }
+
+        .hover-glow:hover {
+            text-shadow: 0 0 20px rgba(52, 234, 216, 0.8);
+        }
+
+        .hover-border {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 5px;
+            cursor: pointer;
+        }
+
+        .hover-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #34ead8;
+            transition: width 0.3s ease;
+        }
+
+        .hover-border:hover::after {
+            width: 100%;
+        }
+
+        /* Scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-
 <body>
-
-  <section class="hero">
-
-    <div class="container">
-
-      <!-- LOGO -->
-      <img src="assets/images/logo_elm.png" class="logo" alt="ELM">
-
-      <!-- HEADLINE -->
-      <h1>
-        ALGUMAS IDEIAS <br>
-        PEDEM O <br>
-        <span>RITMO CERTO</span>
-      </h1>
-
-      <p class="sub">
-        SUA MUSICA ESTÁ PRONTA<br>
-        PARA SE TORNAR INEVITÁVEL?
-      </p>
-
-      <a href="#contato" class="cta">
-        Envie sua Demo →
-      </a>
-
-      <!-- BENEFÍCIOS -->
-      <div class="benefits">
-
-        <div class="benefit">
-          <span class="icon">🎵</span>
-          <p>Identidade sonora única</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="https://earthlikemusic.com/wp-content/uploads/2026/02/ChatGPT-Image-18-de-fev.-de-2026-14_56_12-683x1024.png" 
+                         alt="Earth Like Music" 
+                         loading="lazy">
+                </div>
+                <div class="hero-text">
+                    <h6>ALGUMAS IDEIAS</h6>
+                    <h6>PEDEM O</h6>
+                    <h6>RITMO CERTO.</h6>
+                    <h1>SUA MÚSICA ESTÁ PRONTA PARA SE TORNAR INEVITÁVEL?</h1>
+                    <p class="hero-description">A Earth Like Music é um selo boutique de identidade sonora, direção artística e produção premium.</p>
+                    <a href="#ELM" class="btn">Por que trabalhar com a Earth Like Music?</a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="benefit">
-          <span class="icon">⭐</span>
-          <p>Direção artística personalizada</p>
+    <!-- Seção A Diferença -->
+    <section id="ELM" style="background: linear-gradient(135deg, #0a0a0a 0%, #16213e 100%);">
+        <div class="shape-top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 19.6" preserveAspectRatio="none">
+                <path class="shape-fill" style="opacity:0.33" d="M0 0L0 18.8 141.8 4.1 283.5 18.8 283.5 0z"/>
+                <path class="shape-fill" style="opacity:0.33" d="M0 0L0 12.6 141.8 4 283.5 12.6 283.5 0z"/>
+                <path class="shape-fill" style="opacity:0.33" d="M0 0L0 6.4 141.8 4 283.5 6.4 283.5 0z"/>
+                <path class="shape-fill" d="M0 0L0 1.2 141.8 4 283.5 1.2 283.5 0z"/>
+            </svg>
         </div>
-
-        <div class="benefit">
-          <span class="icon">🎚️</span>
-          <p>Mix e master de alto nível</p>
+        <div class="container">
+            <h2 class="section-title">A DIFERENÇA NÃO ESTÁ NO SOM.</h2>
+            <h3 class="section-subtitle" style="font-size: 2rem; color: #34ead8;">ESTÁ NA INTENÇÃO.</h3>
+            
+            <p class="highlight-text">TODA MÚSICA COMEÇA COMO UMA IDEIA. MAS POUCAS IDEIAS ENCONTRAM O AMBIENTE CERTO PARA SE TORNAREM INEVITÁVEIS.</p>
+            <p class="highlight-text">A Earth Like Music existe para esse momento. Quando o projeto deixa de ser apenas inspiração e passa a exigir direção, identidade e coragem.</p>
+            <p class="highlight-text">Aqui, música não é tratada como conteúdo. É tratada como obra. Como visão. Como um produto artístico e comercial com potencial real.</p>
+            <p class="highlight-text">PORQUE CRIAR EM ALTO NÍVEL NÃO É APENAS GRAVAR BEM. É SABER O QUE VOCÊ ESTÁ CONSTRUINDO — E POR QUÊ.</p>
+            <p class="highlight-text">A ELM é um selo boutique de curadoria sonora, direção artística e produção premium.</p>
+            <p class="highlight-text">PARA ARTISTAS QUE SENTEM QUE CHEGOU A HORA DE DAR SEU PRÓXIMO PASSO MAIS IMPORTANTE.</p>
         </div>
+    </section>
 
-      </div>
-
-      <!-- PROVA SOCIAL -->
-      <div class="social-proof">
-        <h3>Impulsionando grandes artistas</h3>
-
-        <div class="avatars">
-          <div class="avatar"></div>
-          <div class="avatar"></div>
-          <div class="avatar"></div>
-          <div class="avatar"></div>
-          <div class="avatar"></div>
+    <!-- Seção de Portfólio -->
+    <section style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);">
+        <div class="shape-top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path class="shape-fill" d="M761.9,44.1L643.1,27.2L333.8,98L0,3.8V0l1000,0v3.9"/>
+            </svg>
         </div>
+        <div class="container">
+            <h2 class="section-title">VOCÊ VAI ENTENDER NO PLAY.</h2>
+            <p class="section-subtitle">PROJETOS REALIZADOS PELO PRODUTOR MUSICAL ALEXANDRE BASA, COM O PADRÃO EARTH LIKE MUSIC.</p>
+            
+            <h3 class="section-label">ARTISTAS INTERNACIONAIS</h3>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <iframe src="https://open.spotify.com/embed/track/5CD1tkgnVZrmPu5myIAzC2" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/2ZcJnttccmQ" width="100%" height="152" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <h3 class="section-label">ARTISTAS NACIONAIS</h3>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <iframe src="https://open.spotify.com/embed/track/1keI7zhktHlDS56LEfPa21" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/8n8S3zolOiI" width="100%" height="152" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <h3 class="section-label">PUBLICIDADE</h3>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/3AA5XNuQGCM" width="100%" height="152" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <p class="small">Trabalhos com artistas de sucesso global</p>
+    <!-- Seção de Modelos de Negócio -->
+    <section class="business-models">
+        <div class="shape-top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 19.6" preserveAspectRatio="none">
+                <path class="shape-fill" style="opacity:0.33" d="M0 0L0 18.8 141.8 4.1 283.5 18.8 283.5 0z"/>
+                <path class="shape-fill" style="opacity:0.33" d="M0 0L0 12.6 141.8 4 283.5 12.6 283.5 0z"/>
+                <path class="shape-fill" style="opacity:0.33" d="M0 0L0 6.4 141.8 4 283.5 6.4 283.5 0z"/>
+                <path class="shape-fill" d="M0 0L0 1.2 141.8 4 283.5 1.2 283.5 0z"/>
+            </svg>
+        </div>
+        <div class="container">
+            <img src="https://earthlikemusic.com/wp-content/uploads/2026/02/ChatGPT-Image-18-de-fev.-de-2026-14_56_12-683x1024.png" 
+                 alt="Earth Like Music" 
+                 class="image-full">
+            
+            <h2 class="section-title">ESCOLHA O MODELO CERTO PARA O SEU NEGÓCIO</h2>
+            
+            <div class="models-grid">
+                <div class="model-card">
+                    <h4>ELM ESTÚDIO</h4>
+                    <div class="divider"></div>
+                    <ul>
+                        <li>Produção musical premium com assinatura técnica ELM.</li>
+                        <li>O artista paga pelo serviço e mantém 100% da master.</li>
+                        <li>Indicado para quem busca excelência sem operação de selo.</li>
+                    </ul>
+                    <a href="https://forms.gle/qWs1Qje1Ms1Xg5An7" target="_blank" class="btn btn-primary">Produzir com o Estúdio</a>
+                </div>
+                
+                <div class="model-card">
+                    <h4>ELM LABEL</h4>
+                    <div class="divider"></div>
+                    <ul>
+                        <li>Lançamentos oficiais pela Earth Like Music.</li>
+                        <li>A produção entra como investimento e o projeto segue modelo de Recoupment.</li>
+                        <li>Indicado para artistas que querem construir catálogo com governança.</li>
+                    </ul>
+                    <a href="https://forms.gle/qWs1Qje1Ms1Xg5An7" target="_blank" class="btn btn-primary">Lançar com o Label</a>
+                </div>
+                
+                <div class="model-card">
+                    <h4>ELM JV</h4>
+                    <div class="divider"></div>
+                    <ul>
+                        <li>Parceria estratégica com co-investimento.</li>
+                        <li>A ELM aporta produção e operação, e o artista aporta capital ou ativos.</li>
+                        <li>Split e upside definidos caso a caso.</li>
+                    </ul>
+                    <a href="https://forms.gle/qWs1Qje1Ms1Xg5An7" target="_blank" class="btn btn-primary">Propor uma JV</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="stars">★★★★★</div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="shape-top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 20" preserveAspectRatio="none">
+                <path class="shape-fill" d="M0,0v3c0,0,393.8,0,483.4,0c9.2,0,16.6,7.4,16.6,16.6c0-9.1,7.4-16.6,16.6-16.6C606.2,3,1000,3,1000,3V0H0z"/>
+            </svg>
+        </div>
+        <div class="container">
+            <h2 style="font-size: 2.5rem; color: #34ead8; margin-bottom: 30px;">SÓ O HYPE NÃO TE SUSTENTA.</h2>
+            
+            <div class="footer-logo">
+                <img src="https://earthlikemusic.com/wp-content/uploads/2026/02/logo_elm.png" 
+                     alt="Earth Like Music Logo">
+            </div>
+            
+            <p class="footer-text">© 2026 Earth Like Music. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
-        <blockquote>
-          “O selo ELM levou meus sons para outro nível!”
-        </blockquote>
+    <script>
+        // Efeito de scroll suave para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-        <p class="author">DJ Lucas Alves</p>
+        // Efeito de parallax simples no scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('.hero-image');
+            if (heroImage) {
+                heroImage.style.transform = `translateY(${scrolled * 0.1}px)`;
+            }
+        });
 
-      </div>
+        // Animação de fade-in ao scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    </div>
-  </section>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
 
+        document.querySelectorAll('.service-card, .model-card, .video-card, .highlight-text').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
 
-  <!-- CONTATO -->
-  <section id="contato" class="contact">
-    <div class="container">
-      <h2>Envie sua Demo</h2>
+        // Efeito de hover nos cards
+        document.querySelectorAll('.service-card, .model-card, .video-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'all 0.3s ease';
+            });
+        });
 
-      <form action="mailto:suprabasa@gmail.com" method="post" enctype="text/plain">
-
-        <input type="text" name="nome" placeholder="Seu nome" required>
-        <input type="email" name="email" placeholder="Seu email" required>
-        <input type="text" name="link" placeholder="Link do Spotify / YouTube" required>
-
-        <textarea name="mensagem" rows="4" placeholder="Fale sobre seu projeto..."></textarea>
-
-        <button type="submit">Enviar</button>
-
-      </form>
-    </div>
-  </section>
-
+        // Loading suave das imagens
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.animation = 'pulse 0.5s ease';
+            });
+        });
+    </script>
 </body>
 </html>

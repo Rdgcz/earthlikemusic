@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Earth Like Music</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <section class="hero">
+
+    <div class="container">
+
+      <!-- LOGO -->
+      <img src="assets/images/logo_elm.png" class="logo" alt="ELM">
+
+      <!-- HEADLINE -->
+      <h1>
+        ALGUMAS IDEIAS <br>
+        PEDEM O <br>
+        <span>RITMO CERTO</span>
+      </h1>
+
+      <p class="sub">
+        SUA MUSICA ESTÁ PRONTA<br>
+        PARA SE TORNAR INEVITÁVEL?
+      </p>
+
+      <a href="#contato" class="cta">
+        Envie sua Demo →
+      </a>
+
+      <!-- BENEFÍCIOS -->
+      <div class="benefits">
+
+        <div class="benefit">
+          <span class="icon">🎵</span>
+          <p>Identidade sonora única</p>
+        </div>
+
+        <div class="benefit">
+          <span class="icon">⭐</span>
+          <p>Direção artística personalizada</p>
+        </div>
+
+        <div class="benefit">
+          <span class="icon">🎚️</span>
+          <p>Mix e master de alto nível</p>
+        </div>
+
+      </div>
+
+      <!-- PROVA SOCIAL -->
+      <div class="social-proof">
+        <h3>Impulsionando grandes artistas</h3>
+
+        <div class="avatars">
+          <div class="avatar"></div>
+          <div class="avatar"></div>
+          <div class="avatar"></div>
+          <div class="avatar"></div>
+          <div class="avatar"></div>
+        </div>
+
+        <p class="small">Trabalhos com artistas de sucesso global</p>
+
+        <div class="stars">★★★★★</div>
+
+        <blockquote>
+          “O selo ELM levou meus sons para outro nível!”
+        </blockquote>
+
+        <p class="author">DJ Lucas Alves</p>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTATO -->
+  <section id="contato" class="contact">
+    <div class="container">
+      <h2>Envie sua Demo</h2>
+
+      <form action="mailto:suprabasa@gmail.com" method="post" enctype="text/plain">
+
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu email" required>
+        <input type="text" name="link" placeholder="Link do Spotify / YouTube" required>
+
+        <textarea name="mensagem" rows="4" placeholder="Fale sobre seu projeto..."></textarea>
+
+        <button type="submit">Enviar</button>
+
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>
